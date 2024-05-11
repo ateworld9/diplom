@@ -1,14 +1,26 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import { LoginPage } from './pages/LoginPage';
 import { RegistrationPage } from './pages/RegistrationPage';
 import ErrorPage from './pages/ErrorPage';
 import { Layout } from './components/Layout';
 import { DashboardPage } from './pages/DashboardPage';
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
+
+const ProtectedRoute = ({ children }) => {
+    const isAuth = useSelector((state: RootState) => state.auth.isAuth);
+
+    if (!isAuth) {
+        return <Navigate to="/login" replace />;
+    }
+
+    return children;
+};
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <div>Hello world!</div>,
+        element: <LoginPage />,
     },
     {
         path: '/login',
@@ -21,9 +33,11 @@ export const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: (
-            <Layout>
-                <DashboardPage />
-            </Layout>
+            <ProtectedRoute>
+                <Layout>
+                    <DashboardPage />
+                </Layout>
+            </ProtectedRoute>
         ),
     },
     {

@@ -15,6 +15,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems } from './mainListItems';
 import { Button } from '@mui/material';
+import { useAppDispatch } from '../store';
+import { fetchLogout } from '../store/auth/authThunks';
 
 interface AppBarProps extends MuiAppBarProps {
     open?: boolean;
@@ -67,10 +69,16 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export const Layout = ({ children }: { children: ReactNode }) => {
+    const dispatch = useAppDispatch();
     const [open, setOpen] = useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
     };
+
+    const handleLogout = () => {
+        dispatch(fetchLogout());
+    };
+
     return (
         <>
             <Box sx={{ display: 'flex' }}>
@@ -108,6 +116,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
                                 sx={{
                                     color: 'white',
                                 }}
+                                onClick={handleLogout}
                             >
                                 Выйти
                             </Button>

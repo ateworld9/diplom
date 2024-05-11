@@ -5,6 +5,7 @@ import type { AxiosError } from 'axios';
 
 import { AuthService, AuthResponse } from '../../api/auth';
 import { API_PREFIX, ResponseError } from '../../api/axios';
+import { redirect } from 'react-router-dom';
 
 export const fetchLogin = createAsyncThunk<
     AuthResponse,
@@ -17,6 +18,7 @@ export const fetchLogin = createAsyncThunk<
         // thunkAPI.dispatch(userModel.actions.addUser(response.data.user));
         return response.data;
     } catch (err) {
+        console.log(err);
         const error: AxiosError<ResponseError> =
             err as AxiosError<ResponseError>; // cast the error for access
         if (!error.response) {

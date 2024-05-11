@@ -1,3 +1,7 @@
+import { MouseEvent, useState } from 'react';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
@@ -5,11 +9,42 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import { Link as RouterLink } from 'react-router-dom';
 import { API_BASE } from '../../api/axios';
+import { useAppDispatch } from '../../store';
+import { fetchRegistration } from '../../store/auth/authThunks';
 
 export const RegistrationPage = () => {
+    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
+
+    const dispatch = useAppDispatch();
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            password: '',
+        },
+        onSubmit: (values) => {
+            try {
+                dispatch(fetchRegistration(values));
+                navigate('/dashboard');
+            } catch (error) {
+                console.log(error);
+            }
+        },
+    });
+    const { handleSubmit, handleChange, values } = formik;
+
     return (
         <Grid container component="main" sx={{ height: '100vh' }}>
             <Grid
@@ -35,7 +70,7 @@ export const RegistrationPage = () => {
                     </Typography>
                     <Box
                         component="form"
-                        onSubmit={() => {}}
+                        onSubmit={handleSubmit}
                         noValidate
                         sx={{ mt: 1 }}
                     >
@@ -46,6 +81,8 @@ export const RegistrationPage = () => {
                             id="username"
                             label="Имя пользователя"
                             name="username"
+                            onChange={handleChange}
+                            value={values.username}
                             autoComplete="username"
                             autoFocus
                         />
@@ -53,11 +90,33 @@ export const RegistrationPage = () => {
                             margin="normal"
                             required
                             fullWidth
-                            name="password"
-                            label="Пароль"
-                            type="password"
                             id="password"
+                            label="Пароль"
+                            name="password"
+                            onChange={handleChange}
+                            value={values.password}
                             autoComplete="current-password"
+                            type={showPassword ? 'text' : 'password'}
+                            InputProps={{
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={
+                                                handleMouseDownPassword
+                                            }
+                                            edge="end"
+                                        >
+                                            {showPassword ? (
+                                                <VisibilityOff />
+                                            ) : (
+                                                <Visibility />
+                                            )}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                            }}
                         />
                         <Button
                             type="submit"
