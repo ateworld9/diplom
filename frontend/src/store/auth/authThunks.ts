@@ -16,7 +16,7 @@ export const fetchLogin = createAsyncThunk<
         const response = await AuthService.login({ username, password });
         localStorage.setItem('token', response.data.accessToken);
         // thunkAPI.dispatch(userModel.actions.addUser(response.data.user));
-        return response.data;
+        return { ...response.data, code: response.status };
     } catch (err) {
         console.log(err);
         const error: AxiosError<ResponseError> =
@@ -41,7 +41,7 @@ export const fetchRegistration = createAsyncThunk<
         });
         localStorage.setItem('token', response.data.accessToken);
         // thunkAPI.dispatch(userModel.actions.addUser(response.data.user));
-        return response.data;
+        return { ...response.data, code: response.status };
     } catch (err) {
         const error: AxiosError<ResponseError> =
             err as AxiosError<ResponseError>; // cast the error for access

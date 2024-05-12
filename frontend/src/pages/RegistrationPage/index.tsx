@@ -1,6 +1,7 @@
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -15,12 +16,32 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import { API_BASE } from '../../api/axios';
-import { useAppDispatch } from '../../store';
+import { RootState, useAppDispatch } from '../../store';
 import { fetchRegistration } from '../../store/auth/authThunks';
+import { useSelector } from 'react-redux';
+import { cleanAuthError } from '../../store/auth/slice';
+
+const loginSchema = Yup.object().shape({
+    username: Yup.string()
+        .min(2, 'Слишком короткое имя пользователя')
+        .max(50, 'Слишком длинный имя пользователя')
+        .required('Имя пользователя обязательно!'),
+    password: Yup.string()
+        .min(8, 'Пароль должен быть более 8 символов')
+        .required('Пароль обязателен!'),
+});
 
 export const RegistrationPage = () => {
+    const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+
+    const error = useSelector((state: RootState) => state.auth.error);
+    useEffect(() => {
+        return () => {
+            dispatch(cleanAuthError());
+        };
+    }, []);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -28,22 +49,26 @@ export const RegistrationPage = () => {
         event.preventDefault();
     };
 
-    const dispatch = useAppDispatch();
     const formik = useFormik({
         initialValues: {
             username: '',
             password: '',
         },
-        onSubmit: (values) => {
+        onSubmit: async (values) => {
             try {
-                dispatch(fetchRegistration(values));
-                navigate('/dashboard');
+                const originalPromise: any = await dispatch(
+                    fetchRegistration(values),
+                ).unwrap();
+                console.log(originalPromise);
+                if (originalPromise.code === 200) {
+                    navigate('/dashboard');
+                }
             } catch (error) {
                 console.log(error);
             }
         },
     });
-    const { handleSubmit, handleChange, values } = formik;
+    const { handleSubmit, handleChange, values, errors } = formik;
 
     return (
         <Grid container component="main" sx={{ height: '100vh' }}>
@@ -85,6 +110,8 @@ export const RegistrationPage = () => {
                             value={values.username}
                             autoComplete="username"
                             autoFocus
+                            error={!!errors.username}
+                            helperText={errors.username}
                         />
                         <TextField
                             margin="normal"
@@ -97,6 +124,8 @@ export const RegistrationPage = () => {
                             value={values.password}
                             autoComplete="current-password"
                             type={showPassword ? 'text' : 'password'}
+                            error={!!errors.password}
+                            helperText={errors.password}
                             InputProps={{
                                 endAdornment: (
                                     <InputAdornment position="end">
@@ -118,6 +147,11 @@ export const RegistrationPage = () => {
                                 ),
                             }}
                         />
+                        {error && (
+                            <Typography variant="caption" color="error">
+                                {error}
+                            </Typography>
+                        )}
                         <Button
                             type="submit"
                             fullWidth
