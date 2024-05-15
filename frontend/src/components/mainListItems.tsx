@@ -1,45 +1,55 @@
+import { Link } from 'react-router-dom';
+
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
+import Divider from '@mui/material/Divider';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import TableRowsOutlinedIcon from '@mui/icons-material/TableRowsOutlined';
+import TrendingUpOutlinedIcon from '@mui/icons-material/TrendingUpOutlined';
 
 export const mainListItems = (
     <>
-        <ListItemButton>
+        <ListSubheader component="div">Apple</ListSubheader>
+        <ListItemButton LinkComponent={Link} to="/apple-dashboard">
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
-            <ListItemText primary="Dashboard" />
+            <ListItemText primary="Финансовые показатели" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton LinkComponent={Link} to="/apple-balance-sheet">
             <ListItemIcon>
-                <ShoppingCartIcon />
+                <TableRowsOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary="Orders" />
+            <ListItemText primary="Сводная таблица" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton LinkComponent={Link} to="/apple-cashflow">
             <ListItemIcon>
-                <PeopleIcon />
+                <TrendingUpOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary="Customers" />
+            <ListItemText primary="Финансовый поток" />
         </ListItemButton>
-        <ListItemButton>
+        <Divider />
+        <ListSubheader component="div">Alibaba</ListSubheader>
+        <ListItemButton LinkComponent={Link} to="/alibaba-dashboard">
             <ListItemIcon>
-                <BarChartIcon />
+                <DashboardIcon />
             </ListItemIcon>
-            <ListItemText primary="Reports" />
+            <ListItemText primary="Финансовые показатели" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton LinkComponent={Link} to="/alibaba-balance-sheet">
             <ListItemIcon>
-                <LayersIcon />
+                <TableRowsOutlinedIcon />
             </ListItemIcon>
-            <ListItemText primary="Integrations" />
+            <ListItemText primary="Сводная таблица" />
         </ListItemButton>
+        <ListItemButton LinkComponent={Link} to="/alibaba-cashflow">
+            <ListItemIcon>
+                <TrendingUpOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary="Финансовый поток" />
+        </ListItemButton>
+        <Divider />
     </>
 );

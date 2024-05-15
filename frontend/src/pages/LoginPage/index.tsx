@@ -62,7 +62,7 @@ export const LoginPage = () => {
                     fetchLogin(values),
                 ).unwrap();
                 if (originalPromise.code === 200) {
-                    navigate('/dashboard');
+                    navigate('/apple-dashboard');
                 }
             } catch (error) {
                 console.log(error);

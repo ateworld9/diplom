@@ -6,6 +6,8 @@ import { Layout } from './components/Layout';
 import { DashboardPage } from './pages/DashboardPage';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
+import { BalanceSheetPage } from './pages/BalanceSheetPage';
+import { CashflowPage } from './pages/CashflowPage';
 
 const ProtectedRoute = ({ children }) => {
     const isAuth = useSelector((state: RootState) => state.auth.isAuth);
@@ -31,11 +33,31 @@ export const router = createBrowserRouter([
         element: <RegistrationPage />,
     },
     {
-        path: '/dashboard',
+        path: '/apple-dashboard',
         element: (
             <ProtectedRoute>
                 <Layout>
                     <DashboardPage />
+                </Layout>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/apple-balance-sheet',
+        element: (
+            <ProtectedRoute>
+                <Layout>
+                    <BalanceSheetPage />
+                </Layout>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/apple-cashflow',
+        element: (
+            <ProtectedRoute>
+                <Layout>
+                    <CashflowPage />
                 </Layout>
             </ProtectedRoute>
         ),
