@@ -11,3 +11,16 @@ export const BalanceSheetPage = () => {
         </>
     );
 };
+export const AlibabaBalanceSheetPage = () => {
+    return (
+        <>
+            <iframe
+                title="balance_sheet_alibaba"
+                width="1300"
+                height="800"
+                src="https://app.powerbi.com/reportEmbed?reportId=9a863e88-8aa5-4e57-be6f-97183115b477&autoAuth=true&ctid=24c0c468-d699-47a3-b18f-d304d154105d"
+                allowFullScreen={true}
+            ></iframe>
+        </>
+    );
+};
