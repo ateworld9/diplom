@@ -3,11 +3,14 @@ import { LoginPage } from './pages/LoginPage';
 import { RegistrationPage } from './pages/RegistrationPage';
 import ErrorPage from './pages/ErrorPage';
 import { Layout } from './components/Layout';
-import { DashboardPage } from './pages/DashboardPage';
+import { AlibabaDashboardPage, DashboardPage } from './pages/DashboardPage';
 import { useSelector } from 'react-redux';
 import { RootState } from './store';
-import { BalanceSheetPage } from './pages/BalanceSheetPage';
-import { CashflowPage } from './pages/CashflowPage';
+import {
+    AlibabaBalanceSheetPage,
+    BalanceSheetPage,
+} from './pages/BalanceSheetPage';
+import { AlibabaCashflowPage, CashflowPage } from './pages/CashflowPage';
 
 const ProtectedRoute = ({ children }) => {
     const isAuth = useSelector((state: RootState) => state.auth.isAuth);
@@ -58,6 +61,36 @@ export const router = createBrowserRouter([
             <ProtectedRoute>
                 <Layout>
                     <CashflowPage />
+                </Layout>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/alibaba-dashboard',
+        element: (
+            <ProtectedRoute>
+                <Layout>
+                    <AlibabaDashboardPage />
+                </Layout>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/alibaba-balance-sheet',
+        element: (
+            <ProtectedRoute>
+                <Layout>
+                    <AlibabaBalanceSheetPage />
+                </Layout>
+            </ProtectedRoute>
+        ),
+    },
+    {
+        path: '/alibaba-cashflow',
+        element: (
+            <ProtectedRoute>
+                <Layout>
+                    <AlibabaCashflowPage />
                 </Layout>
             </ProtectedRoute>
         ),
