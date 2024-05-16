@@ -18,19 +18,19 @@ export const mainListItems = (
                 <ListSubheader component="div">Alibaba</ListSubheader>
             </AccordionSummary>
             <AccordionDetails>
-                <ListItemButton LinkComponent={Link} to="/apple-dashboard">
+                <ListItemButton LinkComponent={Link} to="/alibaba-dashboard">
                     <ListItemIcon>
                         <DashboardIcon />
                     </ListItemIcon>
                     <ListItemText primary="Финансовые показатели" />
                 </ListItemButton>
-                <ListItemButton LinkComponent={Link} to="/apple-balance-sheet">
+                <ListItemButton LinkComponent={Link} to="/alibaba-balance-sheet">
                     <ListItemIcon>
                         <TableRowsOutlinedIcon />
                     </ListItemIcon>
                     <ListItemText primary="Сводная таблица" />
                 </ListItemButton>
-                <ListItemButton LinkComponent={Link} to="/apple-cashflow">
+                <ListItemButton LinkComponent={Link} to="/alibaba-cashflow">
                     <ListItemIcon>
                         <TrendingUpOutlinedIcon />
                     </ListItemIcon>
