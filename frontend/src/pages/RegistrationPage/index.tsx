@@ -59,9 +59,14 @@ export const RegistrationPage = () => {
                 const originalPromise: any = await dispatch(
                     fetchRegistration(values),
                 ).unwrap();
-                console.log(originalPromise);
                 if (originalPromise.code === 200) {
-                    navigate('/apple-dashboard');
+                    if (values.username.endsWith('apple.com')) {
+                        navigate('/apple-dashboard');
+                    } else if (values.username.endsWith('alibaba.com')) {
+                        navigate('/alibaba-dashboard');
+                    } else {
+                        navigate('/apple-dashboard');
+                    }
                 }
             } catch (error) {
                 console.log(error);
