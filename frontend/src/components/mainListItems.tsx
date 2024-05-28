@@ -24,6 +24,120 @@ export const MainListItems = () => {
                 <>
                     <Accordion disableGutters square>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Alibaba
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/alibaba-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/alibaba-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/alibaba-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Alphabet
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Amazon
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                             <ListSubheader component="div">Apple</ListSubheader>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -61,7 +175,7 @@ export const MainListItems = () => {
                     <Accordion disableGutters square>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                             <ListSubheader component="div">
-                                Alibaba
+                                Home Depot
                             </ListSubheader>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -86,6 +200,416 @@ export const MainListItems = () => {
                             <ListItemButton
                                 LinkComponent={Link}
                                 to="/alibaba-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">Merck</ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">Meta</ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Microsoft
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Nestle
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                NVIDIA
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Oracle
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Samsung
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">Tesla</ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Toyota
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">Visa</ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
+                            >
+                                <ListItemIcon>
+                                    <TrendingUpOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Финансовый поток" />
+                            </ListItemButton>
+                        </AccordionDetails>
+                    </Accordion>
+                    <Divider />
+
+                    <Accordion disableGutters square>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            <ListSubheader component="div">
+                                Walmart
+                            </ListSubheader>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-dashboard"
+                            >
+                                <ListItemIcon>
+                                    <DashboardIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Доходы и расходы" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-balance-sheet"
+                            >
+                                <ListItemIcon>
+                                    <TableRowsOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Сводная таблица" />
+                            </ListItemButton>
+                            <ListItemButton
+                                LinkComponent={Link}
+                                to="/apple-cashflow"
                             >
                                 <ListItemIcon>
                                     <TrendingUpOutlinedIcon />
